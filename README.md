@@ -1,6 +1,7 @@
 # Wordle Assist Script
 My first five guesses on the January 14th, 2026 [Wordle](https://www.nytimes.com/games/wordle/index.html) were horrendous, so I wrote a script to narrow down the 6th guess. It was 50/50, I chose wrong, but my hatred is quenched.
 ## Dependencies
+- Wrote it in Python 3.10 but should work with anything.
 - It uses the [pyenchant](https://pypi.org/project/pyenchant/) `pip` package to check if the words its generating are real words before outputting them.
 - Depending on your OS you also need to [download the actual Enchant library](https://pyenchant.github.io/pyenchant/install.html#installing-the-enchant-c-library). On Ubuntu you can `sudo apt install libenchant-2-dev`.
 ## Usage
