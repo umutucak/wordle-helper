@@ -14,8 +14,20 @@ You can give your progress by entering the **_greens, yellows, and grays_** you 
 It will eliminate all words in the American English dictionary that do not pass these feedbacks, and give a list of possible words:
 ```
 $ python3 wordle_helper.py
-Give your greens like this: 'a2 b4' for 'a' in the 2nd and 'b' in the 4th slot:
-Give your yellows like this: 'c1 c2 d3' for 'c' not in the 1st or 2nd, and 'd' not in the 3rd slot: a4 i3 d1 a2 o2 i2 a3
-Give your grays like this: `a b c` if these letters are gray: e r y p s j k l c n m
+WORDLE HELPER
+You can input your progress so far in the prompts below.
+
+ > GREENS (Press Enter for empty)
+'a2 b4' for 'a' in the 2nd and 'b' in the 4th slot:
+
+
+ > YELLOWS (Press Enter for empty)
+'c1 c2 d3' for 'c' not in the 1st or 2nd, and 'd' not in the 3rd slot:
+a4 i3 d1 a2 o2 i2 a3
+
+ > GRAYS (Press Enter for empty)
+`a b c` if these letters are gray:
+e r y p s j k l c n m
+
 ['audio', 'avoid']
 ```
