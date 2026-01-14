@@ -3,21 +3,21 @@ import enchant
 # INPUT FUNCTIONS
 def get_greens():
     r = ['', '', '', '', '']
-    x = input("Give your greens like this: 'a2 b4' for 'a' in the 2nd and 'b' in the 4th slot: ")
+    x = input(" > GREENS (Press Enter for empty)\n'a2 b4' for 'a' in the 2nd and 'b' in the 4th slot:\n")
     for t in x.split():
         r[int(t[1])-1] = t[0]
     return r
 
 def get_yellows():
     r = [[], [], [], [], []]
-    x = input("Give your yellows like this: 'c1 c2 d3' for 'c' not in the 1st or 2nd, and 'd' not in the 3rd slot: ")
+    x = input(" > YELLOWS (Press Enter for empty)\n'c1 c2 d3' for 'c' not in the 1st or 2nd, and 'd' not in the 3rd slot:\n")
     for t in x.split():
         r[int(t[1])-1].append(t[0])
     return r
 
 def get_grays():
     r = []
-    x = input("[OPTIONAL. Press Enter (empty) to skip] Give your grays like this: `a b c` if these letters are gray: ")
+    x = input(" > GRAYS (Press Enter for empty)\n`a b c` if these letters are gray:\n")
     for t in x.split():
         r.append(t)
     return r
@@ -49,22 +49,27 @@ def construct(c, l):
         construct(c, _l)
         c = c[:-1]
 
-letters = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm']
-words = []
+if __name__ == "__main__":
+    print("WORDLE HELPER")
+    print("You can input your progress so far in the prompts below.\n")
 
-# get inputs
-greens = get_greens()
-yellows = get_yellows()
-grays = get_grays()
-# keep only non-gray letters
-letters = list(filter(lambda item: item not in grays, letters))
+    letters = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm']
+    words = []
 
-construct('', letters)
+    # get inputs
+    greens = get_greens()
+    yellows = get_yellows()
+    grays = get_grays()
+    
+    # keep only non-gray letters
+    letters = list(filter(lambda item: item not in grays, letters))
 
-good_words = []
-d = enchant.Dict("en_US")
-for word in words:
-    if (d.check(word)):
-        good_words.append(word)
+    construct('', letters)
 
-print(good_words)
+    good_words = []
+    d = enchant.Dict("en_US")
+    for word in words:
+        if (d.check(word)):
+            good_words.append(word)
+
+    print(good_words)
