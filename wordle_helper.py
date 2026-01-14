@@ -52,12 +52,10 @@ def construct(c, l):
 letters = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm']
 words = []
 
-# greens = get_greens()
-greens = ['', '', '', '', '']
-# yellows = get_yellows()
-yellows = [['d'], ['a', 'o', 'i'], ['i', 'a'], ['a'], []]
-# grays = get_grays()
-grays = ['e', 'r', 'y', 'p', 's', 'j', 'k', 'l', 'c', 'n', 'm']
+# get inputs
+greens = get_greens()
+yellows = get_yellows()
+grays = get_grays()
 # keep only non-gray letters
 letters = list(filter(lambda item: item not in grays, letters))
 
