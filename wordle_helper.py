@@ -4,6 +4,7 @@ import enchant
 def get_greens():
     r = ['', '', '', '', '']
     x = input(" > GREENS (Press Enter for empty)\n'a2 b4' for 'a' in the 2nd and 'b' in the 4th slot:\n")
+    print() # for clean CLI prints
     for t in x.split():
         r[int(t[1])-1] = t[0]
     return r
@@ -11,6 +12,7 @@ def get_greens():
 def get_yellows():
     r = [[], [], [], [], []]
     x = input(" > YELLOWS (Press Enter for empty)\n'c1 c2 d3' for 'c' not in the 1st or 2nd, and 'd' not in the 3rd slot:\n")
+    print() # for clean CLI prints
     for t in x.split():
         r[int(t[1])-1].append(t[0])
     return r
@@ -18,6 +20,7 @@ def get_yellows():
 def get_grays():
     r = []
     x = input(" > GRAYS (Press Enter for empty)\n`a b c` if these letters are gray:\n")
+    print() # for clean CLI prints
     for t in x.split():
         r.append(t)
     return r
@@ -60,7 +63,7 @@ if __name__ == "__main__":
     greens = get_greens()
     yellows = get_yellows()
     grays = get_grays()
-    
+
     # keep only non-gray letters
     letters = list(filter(lambda item: item not in grays, letters))
 
